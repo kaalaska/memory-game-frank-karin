@@ -1,4 +1,55 @@
+.startButton {
+    height: 3rem;
+    width: 10rem;
+    border: 2px;
+    border-color: black;
+    margin: 5rem;
+}
+
+
 body {
+
     background-image: url(./images/sheep-24428_1280.png);
     /* background-repeat: no-repeat; */
+    height: 100 vh;
 }
+
+img {
+    height: 150px;
+    width: 100px;
+    border: 5;
+    border-color: black;
+    border-style: solid;
+    padding: 5px;
+    margin: 4;
+}
+
+h1{
+    font-size: 5rem;
+    text-align: center;
+    color: red;
+    background-color: white;
+}
+
+.hiddenCard {
+    display: none;
+}
+
+#Spielfeld {
+    background-color: blanchedalmond;
+    display: flex;
+    flex-direction: row;
+    padding: 15rem;
+    margin: 5rem 15rem;
+    justify-content: space-between;
+}
+
+article{
+    display: flex;
+    padding: 2;
+    flex-direction: column;
+}
+
+
+
+
