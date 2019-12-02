@@ -20,7 +20,7 @@ Titel/Heading,
 Game description,
 Presentation of array,
 Image for hidden cards,
-Images for cards,
+Images for cards
 
 3) Functions:
 Create array with randamize image index;
@@ -38,6 +38,7 @@ Counter with predetermined number of tries, counting down if no match;
 Win/Lost message;
 
 Frank seine neue nachricht
+Karin ihre nachricht
 
 
 
