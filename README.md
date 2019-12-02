@@ -38,6 +38,7 @@ Counter with predetermined number of tries, counting down if no match;
 Win/Lost message;
 
 Frank seine neue nachricht
+Karin ihre nachricht
 
 
 
