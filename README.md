@@ -20,7 +20,7 @@ Titel/Heading,
 Game description,
 Presentation of array,
 Image for hidden cards,
-Images for cards,
+Images for cards
 
 3) Functions:
 Create array with randamize image index;
