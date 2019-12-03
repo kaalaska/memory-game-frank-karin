@@ -1,3 +1,20 @@
+/* vereinfacht die Berechnung der Größe von Blöcken bzw. des Raums, den ein Block einnimmt. 
+Mit box-sizing bedeutet 'width:200px', dass der Browser 
+den Block 200px breit rendert, gleich ob und wieviel padding zum Block gehört.
+*/
+*{
+    padding: 0;
+    margin-right: 0;
+    box-sizing: border-box;
+}
+
+/* vh ist die Viewporthöhe. Damit wird die gesamte Höhe des Browsers ausgenutzt*/
+body {
+
+    background-image: url(./images/bg_image_meer.jpg);
+    height: 100 vh;
+}
+
 .startButton {
     height: 3rem;
     width: 10rem;
@@ -7,12 +24,6 @@
 }
 
 
-body {
-
-    background-image: url(./images/sheep-24428_1280.png);
-    /* background-repeat: no-repeat; */
-    height: 100 vh;
-}
 
 img {
     height: 150px;
@@ -39,8 +50,8 @@ h1{
     background-color: blanchedalmond;
     display: flex;
     flex-direction: row;
-    padding: 15rem;
-    margin: 5rem 15rem;
+    padding: 5rem;
+   /* margin: 5rem 15rem;*/
     justify-content: space-between;
 }
 
