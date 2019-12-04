@@ -31,7 +31,7 @@ function shuffle(arra1) {
 function createCardBoard(array) {
   let cardsList = "";
   for (i = 0; i < array.length; i++) {
-    cardsList += `<div> <button class="imgButton" onclick= matchCard(event)>
+    cardsList += `<div> <button class="imgButton" onclick= play(event)>
          <img class = "imgFront " src="./images/bg.png" alt="Boy"> 
          <img class= "imgBack hiddenCard" src="./images/${array[i].img}" alt="${array[i].name}">
           </button> </div>`;
@@ -49,20 +49,15 @@ function toggleHiddenCard(event) {
 
 let clickedImgArray = [];
 
-function matchCard(event){
-        let clickedCard = event.currentTarget;
-        clickedImgArray.push(clickedCard);
-        // clickedImgArray.push(event.currentTarget.querySelector(".imgBack").getAttribute("alt"));
-        console.log("clickedImgArray :" +clickedImgArray);
-        toggleHiddenCard(event);
-    
-               
+function play(event){
+      let clickedCard = event.currentTarget;
+      clickedImgArray.push(clickedCard);
+      //console.log("clickedImgArray :" +clickedImgArray);
+      toggleHiddenCard(event); 
       
-      console.log("Click1 :" + clickedImgArray);
+      //console.log("Click1 :" + clickedImgArray);
       if(clickedImgArray.length===2){
-          checkImgMatch(clickedImgArray);
-      //console.log(event.currentTarget.querySelector(".imgBack"));
-      array = [];
+          checkImgMatch(clickedImgArray);      
   }
 }
 
@@ -79,16 +74,10 @@ function checkImgMatch(array){
     console.log("Card1" + card1);
     console.log("Card2" + card2);
     console.log(startedPoints);
-    //setTimeout(toggleHiddenCard(event), 10);
-    //function toggleAutomated()    
-        
-    //console.log(array[0].getElementsByTagName("img"));
-    //Array.from(array[0].getElementsByTagName("img")).forEach(img => img.classList.toggle("hiddenCard"));
-    //Array.from(array[1].getElementsByTagName("img")).forEach(img => img.classList.toggle("hiddenCard"));
-    
+      
     toggleAutomated(array);
   }
-  array = [];
+  array = [];  
 } 
 
 
@@ -97,7 +86,7 @@ function toggleAutomated(array) {
   setTimeout(function() {
     Array.from(array[0].getElementsByTagName("img")).forEach(img => img.classList.toggle("hiddenCard"));
     Array.from(array[1].getElementsByTagName("img")).forEach(img => img.classList.toggle("hiddenCard"));
-  },5000);
+  },5000);  
 }
 
 
