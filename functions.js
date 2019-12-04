@@ -48,12 +48,14 @@ function toggleHiddenCard(event) {
 
 
 let clickedImgArray = [];
-let IndexesOfClickedArray = [];
+
 function matchCard(event){
-        clickedImgArray.push(event.currentTarget.querySelector(".imgBack").getAttribute("alt"));
-        IndexesOfClickedArray.push(event.currentTarget.querySelector(".imgBack"));
+        let clickedCard = event.currentTarget;
+        clickedImgArray.push(clickedCard);
+        // clickedImgArray.push(event.currentTarget.querySelector(".imgBack").getAttribute("alt"));
+        console.log("clickedImgArray :" +clickedImgArray);
         toggleHiddenCard(event);
-        console.log(IndexesOfClickedArray);
+    
                
       
       console.log("Click1 :" + clickedImgArray);
@@ -65,11 +67,17 @@ function matchCard(event){
 }
 
 function checkImgMatch(array){
-  if(array[0]===array[1]){
+  const card1 = array[0].querySelector(".imgBack").getAttribute("alt");
+  const card2 = array[1].querySelector(".imgBack").getAttribute("alt");
+  if(card1 === card2){
+    console.log("Card1" + card1);
+    console.log("Card2" + card2);
     reachedPoints +=1; 
     //console.log(reachedPoints);
   }else{
     startedPoints -= 1; 
+    console.log("Card1" + card1);
+    console.log("Card2" + card2);
     console.log(startedPoints);
     //setTimeout(toggleHiddenCard(event), 10);
     //function toggleAutomated()    
