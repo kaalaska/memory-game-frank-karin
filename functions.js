@@ -73,7 +73,7 @@ function checkImgMatch(array){
     console.log("Card1" + card1);
     console.log("Card2" + card2);
     reachedPoints +=1; 
-    //console.log(reachedPoints);
+    console.log(reachedPoints);
   }else{
     startedPoints -= 1; 
     console.log("Card1" + card1);
@@ -81,17 +81,25 @@ function checkImgMatch(array){
     console.log(startedPoints);
     //setTimeout(toggleHiddenCard(event), 10);
     //function toggleAutomated()    
+        
+    //console.log(array[0].getElementsByTagName("img"));
+    //Array.from(array[0].getElementsByTagName("img")).forEach(img => img.classList.toggle("hiddenCard"));
+    //Array.from(array[1].getElementsByTagName("img")).forEach(img => img.classList.toggle("hiddenCard"));
+    
+    toggleAutomated(array);
   }
   array = [];
 } 
 
 
 
-function toggleAutomated() {
- 
-  let imgVar = event.currentTarget.getElementsByTagName("img");
-  Array.from(imgVar).forEach(img => img.classList.toggle("hiddenCard"));
+function toggleAutomated(array) {
+  setTimeout(function() {
+    Array.from(array[0].getElementsByTagName("img")).forEach(img => img.classList.toggle("hiddenCard"));
+    Array.from(array[1].getElementsByTagName("img")).forEach(img => img.classList.toggle("hiddenCard"));
+  },5000);
 }
+
 
 
 shuffle(cards);
