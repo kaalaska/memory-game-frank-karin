@@ -2,79 +2,90 @@
 in ein neues randomArray shuffledCards ausgegeben. Mit diesem soll dann
 weiter gearbeitet werden
 */
+
+
 let shuffledCards = [];
-  
-  function shuffle(arra1) {
-    let ctr = arra1.length;
-    let temp;
-    let index;
-  
-    // While there are elements in the array
-    while (ctr > 0) {
-  // Pick a random index
-        index = Math.floor(Math.random() * ctr);
-  // Decrease ctr by 1
-        ctr--;
-  // And swap the last element with it
-        temp = arra1[ctr];
-        arra1[ctr] = arra1[index];
-        arra1[index] = temp;
-    } 
+let reachedPoints = 0;
+let startedPoints = 10;
+
+function shuffle(arra1) {
+  let ctr = arra1.length;
+  let temp;
+  let index;
+
+  // While there are elements in the array
+  while (ctr > 0) {
+    // Pick a random index
+    index = Math.floor(Math.random() * ctr);
+    // Decrease ctr by 1
+    ctr--;
+    // And swap the last element with it
+    temp = arra1[ctr];
+    arra1[ctr] = arra1[index];
+    arra1[index] = temp;
+  }
   shuffledCards = arra1;
   return shuffledCards;
-  }
+}
 
-
- function createCardBoard(array){
-    let cardsList = "";
-    for(i=0; i< array.length; i++){
-        cardsList += `<div> <button class="imgButton" onclick= matchCard(event)>
-         <img class = "imgFront hiddenCard" src="./images/bg.png" alt="Boy"> 
-         <img class= "imgBack " src="./images/${array[i].img}" alt="${array[i].name}">
+function createCardBoard(array) {
+  let cardsList = "";
+  for (i = 0; i < array.length; i++) {
+    cardsList += `<div> <button class="imgButton" onclick= matchCard(event)>
+         <img class = "imgFront " src="./images/bg.png" alt="Boy"> 
+         <img class= "imgBack hiddenCard" src="./images/${array[i].img}" alt="${array[i].name}">
           </button> </div>`;
-    }
-    document.getElementById("Spielfeld").innerHTML = cardsList;       
   }
+  document.getElementById("Spielfeld").innerHTML = cardsList;
+}
 
-  /* function matchCard(){
-    const getAllCards = document.querySelectorAll(".imgButton");
-    getAllCards.forEach(card => card.addEventListener("click", iWasclicked() ));
+function toggleHiddenCard(event) {
+  console.log(event);
+  let imgVar = event.currentTarget.getElementsByTagName("img");
+  Array.from(imgVar).forEach(img => img.classList.toggle("hiddenCard"));
+}
 
-  } */
-  let click1 = [];
-  function matchCard(event){
-      /* click1.push(event.target.getAttribute("alt"));
+
+
+let clickedImgArray = [];
+let IndexesOfClickedArray = [];
+function matchCard(event){
+        clickedImgArray.push(event.currentTarget.querySelector(".imgBack").getAttribute("alt"));
+        IndexesOfClickedArray.push(event.currentTarget.querySelector(".imgBack"));
+        toggleHiddenCard(event);
+        console.log(IndexesOfClickedArray);
+               
       
-      //console.log(event.target.getAttribute("alt"));
-      console.log("Click1 :" + click1);
-      if(click1.length===2){
-          console.log("Array 2 ist voll");
-          if(click1[0]===click1[1]){
-              alert("Die gewählet Teile Passen");
-          }else{
-              alert("Die Karten passen nicht zusammen");
-          }
-          click1 = [];
-      } */
-      console.log(event.currentTarget.querySelector(".imgBack"));
+      console.log("Click1 :" + clickedImgArray);
+      if(clickedImgArray.length===2){
+          checkImgMatch(clickedImgArray);
+      //console.log(event.currentTarget.querySelector(".imgBack"));
+      array = [];
   }
+}
 
-  shuffle(cards);
-  createCardBoard(shuffledCards);
-  //console.log(document.getElementsByClassName("imgButton"));
-  //matchCard();
-
-
-
-
-
-
-
-
-
-
-
+function checkImgMatch(array){
+  if(array[0]===array[1]){
+    reachedPoints +=1; 
+    //console.log(reachedPoints);
+  }else{
+    startedPoints -= 1; 
+    console.log(startedPoints);
+    //setTimeout(toggleHiddenCard(event), 10);
+    //function toggleAutomated()    
+  }
+  array = [];
+} 
 
 
 
+function toggleAutomated() {
+ 
+  let imgVar = event.currentTarget.getElementsByTagName("img");
+  Array.from(imgVar).forEach(img => img.classList.toggle("hiddenCard"));
+}
+
+
+shuffle(cards);
+createCardBoard(shuffledCards);
 
