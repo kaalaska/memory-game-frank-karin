@@ -12,7 +12,7 @@ den Block 200px breit rendert, gleich ob und wieviel padding zum Block gehört.
 body {
 
     background-image: url(./images/bg_image_meer.jpg);
-    height: 100 vh;
+    height: 0.7 vh;
 }
 
 .startButton {
@@ -23,6 +23,12 @@ body {
     margin: 5rem;
 }
 
+header{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    height: 4rem;
+}
 
 
 img {
@@ -36,7 +42,7 @@ img {
 }
 
 h1{
-    font-size: 5rem;
+    font-size: 3rem;
     text-align: center;
     color: red;
     background-color: white;
@@ -47,11 +53,14 @@ h1{
 }
 
 #Spielfeld {
-    background-color: blanchedalmond;
+
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    width: 40rem;
+    height: 45rem;
     padding: 5rem;
-   /* margin: 5rem 15rem;*/
+    margin: 0rem 25rem;
     justify-content: space-between;
 }
 
