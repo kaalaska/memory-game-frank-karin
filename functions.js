@@ -12,7 +12,6 @@ function shuffle(arra1) {
   let ctr = arra1.length;
   let temp;
   let index;
-
   // While there are elements in the array
   while (ctr > 0) {
     // Pick a random index
@@ -27,6 +26,8 @@ function shuffle(arra1) {
   shuffledCards = arra1;
   return shuffledCards;
 }
+
+
 
 function createCardBoard(array) {
   let cardsList = "";
@@ -59,6 +60,7 @@ function play(event){
       if(clickedImgArray.length===2){
           checkImgMatch(clickedImgArray);      
   }
+  
 }
 
 function checkImgMatch(array){
@@ -74,13 +76,14 @@ function checkImgMatch(array){
     console.log("Card1" + card1);
     console.log("Card2" + card2);
     console.log(startedPoints);
-      
     toggleAutomated(array);
   }
-  array = [];  
+ 
+  clickedImgArray = [];
+  console.log("array: " + array);
+  console.log("clickedArray: " + clickedImgArray);
+
 } 
-
-
 
 function toggleAutomated(array) {
   setTimeout(function() {
@@ -90,7 +93,7 @@ function toggleAutomated(array) {
 }
 
 
-
 shuffle(cards);
 createCardBoard(shuffledCards);
+
 
