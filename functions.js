@@ -8,6 +8,11 @@ let shuffledCards = [];
 let luckyPoints = 0;
 let allTries = 0;
 
+function startGame(){
+  shuffle(cards);
+  createCardBoard(shuffledCards);
+}
+
 function shuffle(arra1) {
   let ctr = arra1.length;
   let temp;
@@ -102,6 +107,5 @@ function toggleAutomated(array) {
   }
 
 
+//startGame();
 
-shuffle(cards);
-createCardBoard(shuffledCards);
