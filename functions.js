@@ -11,6 +11,7 @@ let allTries = 0;
 function startGame(){
   shuffle(cards);
   createCardBoard(shuffledCards);
+  
 }
 
 function shuffle(arra1) {
@@ -43,6 +44,7 @@ function createCardBoard(array) {
           </button> </div>`;
   }
   document.getElementById("Spielfeld").innerHTML = cardsList;
+ 
 }
 
 function toggleHiddenCard(event) {
@@ -56,45 +58,42 @@ function toggleHiddenCard(event) {
 let clickedImgArray = [];
 
 function play(event){
+      console.log(clickedImgArray);
       let clickedCard = event.currentTarget;
       clickedImgArray.push(clickedCard);
-      //console.log("clickedImgArray :" +clickedImgArray);
-      toggleHiddenCard(event); 
-      
-      //console.log("Click1 :" + clickedImgArray);
+      toggleHiddenCard(event);
       if(clickedImgArray.length===2){
           checkImgMatch(clickedImgArray);      
-  }
-  
+      } 
 }
+
 
 function checkImgMatch(array){
   const card1 = array[0].querySelector(".imgBack").getAttribute("alt");
   const card2 = array[1].querySelector(".imgBack").getAttribute("alt");
   if(card1 === card2){
-    //console.log("Card1" + card1);
-    //console.log("Card2" + card2);
+    
     luckyPoints +=1; 
     allTries +=1;
     console.log("lucky :" + luckyPoints);
     document.getElementById("tr").innerText=`${allTries}`;
     
-    if (luckyPoints === 2){
-      alert("You Won");}
+   if (luckyPoints === 8){
+   document.getElementById("Spielfeld").innerHTML = `<h1>Game Over, You won! Your tries: ${allTries} </h1>`;
+   allTries = 0;
+   document.getElementById("tr").innerText=`${allTries}`;
+    }
 
+  
 
   }else{
     allTries +=1;
-    //console.log("Card1" + card1);
-    //console.log("Card2" + card2);
     toggleAutomated(array);
     document.getElementById("tr").innerText= `${allTries}`;
   }
  
   clickedImgArray = [];
-  //console.log("array: " + array);
-  //console.log("clickedArray: " + clickedImgArray);
- console.log("tries" + allTries);
+  console.log("tries" + allTries);
 } 
 
 
@@ -102,10 +101,12 @@ function toggleAutomated(array) {
   setTimeout(function() {
     Array.from(array[0].getElementsByTagName("img")).forEach(img => img.classList.toggle("hiddenCard"));
     Array.from(array[1].getElementsByTagName("img")).forEach(img => img.classList.toggle("hiddenCard"));
-  },1000);  
+  },500);  
  
   }
 
 
-//startGame();
+  
 
+  
+  

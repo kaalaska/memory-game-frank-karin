@@ -17,7 +17,7 @@ body {
 
 .startButton {
     height: 3rem;
-    width: 5rem;
+    width: 10rem;
     border: 2px;
     border-color: black;
     margin-top: 2rem;
@@ -46,12 +46,13 @@ section{
     margin: 0rem 25rem;
     justify-content: space-between;
     /*border: crimson 3px solid;*/
+    
     margin-right: 20rem;
 }
 
 #count{
     display: flex;
-    color: crimson;
+    color: white;
     font-size: 2rem;
     justify-items: flex-start;
     width: 20rem;
@@ -78,7 +79,7 @@ img {
 h1{
     font-size: 3rem;
     text-align: center;
-    color: red;
+    color: white
 }
 
 .hiddenCard {
