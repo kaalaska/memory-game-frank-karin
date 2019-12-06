@@ -11,7 +11,9 @@ let allTries = 0;
 function startGame(){
   shuffle(cards);
   createCardBoard(shuffledCards);
-  
+  allTries = 0;
+  luckyPoints = 0;
+  document.getElementById("tr").innerText=`${allTries}`;
 }
 
 function shuffle(arra1) {
@@ -79,10 +81,8 @@ function checkImgMatch(array){
     document.getElementById("tr").innerText=`${allTries}`;
     
    if (luckyPoints === 8){
-   document.getElementById("Spielfeld").innerHTML = `<h1>Game Over, You won! Your tries: ${allTries} </h1>`;
-   allTries = 0;
-   document.getElementById("tr").innerText=`${allTries}`;
-    }
+   document.getElementById("Spielfeld").innerHTML = `<h2>Game Over, You won! Your tries: ${allTries} </h2>`;
+   }
 
   
 
