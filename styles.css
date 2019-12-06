@@ -12,12 +12,13 @@ den Block 200px breit rendert, gleich ob und wieviel padding zum Block gehört.
 /* vh ist die Viewporthöhe. Damit wird die gesamte Höhe des Browsers ausgenutzt*/
 body {
    background-image: url(./images/bg_image_meer.jpg);
+   background-size: cover;
     height: 0.7 vh;
 }
 
 .startButton {
     height: 3rem;
-    width: 5rem;
+    width: 10rem;
     border: 2px;
     border-color: black;
     margin-top: 2rem;
@@ -42,16 +43,17 @@ section{
     flex-wrap: wrap;
     width: 40rem;
     height: 45rem;
-    padding: 5rem;
+    /* padding: 5rem; */
     margin: 0rem 25rem;
     justify-content: space-between;
     /*border: crimson 3px solid;*/
+    
     margin-right: 20rem;
 }
 
 #count{
     display: flex;
-    color: crimson;
+    color: white;
     font-size: 2rem;
     justify-items: flex-start;
     width: 20rem;
@@ -67,7 +69,7 @@ section{
 
 img {
     height: 150px;
-    width: 100px;
+    width: 150px;
     border: 5;
     border-color: black;
     border-style: solid;
@@ -77,8 +79,16 @@ img {
 
 h1{
     font-size: 3rem;
+    padding-right: 6rem;
+    /* text-align: center; */
+    color: white
+}
+
+h2{
+    font-size: 3rem;
+    
     text-align: center;
-    color: red;
+    color: white
 }
 
 .hiddenCard {
